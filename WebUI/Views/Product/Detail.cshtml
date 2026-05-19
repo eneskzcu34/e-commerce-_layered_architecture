@@ -1,0 +1,116 @@
+@using Application.DTOs.ProductDTOs
+@model ProductViewDto
+
+<div class="container ec-detail">
+    <form asp-controller="Cart" asp-action="AddToCart" method="post" asp-route-id="@Model.Id" class="ec-product-form">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="ecCarousel" class="carousel slide" data-bs-ride="carousel">
+
+                    <div class="carousel-inner">
+                        @for (int i = 0; i < Model.Images.Count; i++)
+                        {
+                            <div class="carousel-item @(i == 0 ? "active" : "")">
+
+                                <a href="#">
+                                    <img src="@Model.Images[i].ImageUrl" class="d-block w-100 ec-slider-img"
+                                         alt="@Model.Name">
+                                </a>
+
+                            </div>
+                        }
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#ecCarousel"
+                            data-bs-slide="prev">
+
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#ecCarousel"
+                            data-bs-slide="next">
+
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2 class="ec-detail-title">
+                    @Model.Name
+                </h2>
+                <div class="ec-brand">
+                    Kategori: <strong>@Model.CategoryName</strong>
+                </div>
+                <div class="ec-brand">
+                    Marka: <strong>Samsung</strong>
+                </div>
+                <div class="ec-detail-rating">
+                    ⭐⭐⭐⭐☆ (4.3) • 12.345 değerlendirme
+                </div>
+                <div class="ec-price-box">
+                    <span class="ec-detail-old">399 TL</span>
+                    <span class="ec-detail-new">@Model.Price.ToString("F2") TL</span>
+                    <div class="ec-discount">%25 indirim</div>
+                </div>
+                <div class="ec-cargo">
+                    🚚 Yarın kargoda • Ücretsiz kargo
+                </div>
+                <div class="ec-options">
+                    <p>Beden Seç:</p>
+                    <div class="ec-option-list">
+                        <span>S</span>
+                        <span>M</span>
+                        <span>L</span>
+                        <span>XL</span>
+                    </div>
+                </div>
+                <div class="ec-detail-actions">
+                    <button class="ec-btn-cart">Sepete Ekle</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="ec-detail-bottom">
+        <div class="row g-3">
+            <!-- AÇIKLAMA -->
+            <div class="col-md-6">
+                <div class="ec-detail-box">
+                    <h4>Ürün Açıklaması</h4>
+                    <p>
+                        Bu ürün yüksek kaliteli kolajen içerir. Günlük kullanım için uygundur.
+                        Cilt, saç ve tırnak sağlığını destekler. Düzenli kullanımda etkisini gösterir.
+                    </p>
+                </div>
+            </div>
+            <!-- ÖZELLİK -->
+            <div class="col-md-6">
+                <div class="ec-detail-box">
+                    <h4>Ürün Özellikleri</h4>
+                    <ul>
+                        <li>Tip 1-2-3 kolajen içerir</li>
+                        <li>Vitamin desteklidir</li>
+                        <li>Bağışıklık sistemini güçlendirir</li>
+                        <li>Günlük kullanım için uygundur</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- YORUMLAR (ALTTA TAM GENİŞLİK) -->
+        
+        <div class="ec-detail-box mt-3">
+            <h4>Ürün Değerlendirmeleri</h4>
+            <div class="ec-comment-box">
+                <strong>Ahmet K.</strong>
+                <div>⭐⭐⭐⭐☆</div>
+                <p>Gerçekten çok kaliteli bir ürün, tavsiye ederim.</p>
+            </div>
+            <div class="ec-comment-box">
+                <strong>Ayşe T.</strong>
+                <div>⭐⭐⭐⭐⭐</div>
+                <p>Hızlı kargo ve güzel paketleme 👍</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,148 @@
+/* ===== ÜST ALAN ===== */
+.ec-detail {
+  margin-top: 40px;
+}
+
+/* RESİM */
+.ec-product-gallery img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+/* SAĞ PANEL */
+.ec-detail-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.ec-brand {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.ec-detail-rating {
+  color: #f5a623;
+  font-size: 14px;
+}
+
+/* FİYAT */
+.ec-price-box {
+  margin: 15px 0;
+}
+
+.ec-detail-old {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 10px;
+}
+
+.ec-detail-new {
+  color: #ff6000;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.ec-discount {
+  color: #27ae60;
+  font-size: 13px;
+}
+
+/* KARGO */
+.ec-cargo {
+  font-size: 14px;
+  color: #27ae60;
+  margin-bottom: 15px;
+}
+
+/* SEÇENEK */
+.ec-options p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.ec-option-list {
+  display: flex;
+  gap: 10px;
+}
+
+.ec-option-list span {
+  border: 1px solid #ddd;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.ec-option-list span:hover {
+  border-color: #ff6000;
+  color: #ff6000;
+}
+
+/* BUTON */
+.ec-detail-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  width: 300px;
+}
+
+.ec-btn-cart {
+  background: #ff6000;
+  color: #fff;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 10px;
+  font-weight: 500;
+  width: 100%;
+}
+
+.ec-btn-fav {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 14px 20px;
+  border-radius: 10px;
+}
+
+/* ===== ALT BÖLÜM ===== */
+.ec-detail-bottom {
+  margin-top: 50px;
+}
+
+/* BLOK */
+.ec-detail-box {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* BAŞLIK */
+.ec-detail-box h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* TEXT */
+.ec-detail-box p,
+.ec-detail-box li {
+  font-size: 14px;
+  color: #555;
+}
+
+/* YORUM */
+.ec-comment-box {
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.ec-ad-card img {
+  height: 140px;
+  object-fit: fill;
+}
+
+.ec-ad-card:hover {
+  transform: scale(1.03);
+}

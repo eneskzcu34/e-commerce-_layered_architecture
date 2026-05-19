@@ -1,0 +1,109 @@
+.ec-footer {
+    background: #1f1f1f;
+    color: #ccc;
+    padding: 40px 0 20px;
+    margin-top: 100px;
+}
+
+.ec-footer h6 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.ec-footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ec-footer ul li {
+    margin-bottom: 8px;
+}
+
+.ec-footer ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.ec-footer ul li a:hover {
+    color: #ff6000;
+}
+
+.ec-newsletter {
+    display: ruby;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.ec-newsletter input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+}
+
+.ec-newsletter button {
+    background: #f87321;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.ec-newsletter button:hover {
+    background: rgb(212, 89, 12);
+}
+
+.ec-social a {
+    font-size: 18px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #ccc;
+    transition: 0.2s;
+}
+
+.ec-social a:hover {
+    color: #ff6000;
+}
+
+.ec-footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+}.ec-social a {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #2a2a2a;
+    color: #fff;
+    margin-right: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Hover renkleri */
+.ec-social a.facebook:hover {
+    background: #3b5998;
+}
+
+.ec-social a.instagram:hover {
+    background: #e1306c;
+}
+
+.ec-social a.twitter:hover {
+    background: #000;
+}
+
+.ec-social a.youtube:hover {
+    background: #ff0000;
+}

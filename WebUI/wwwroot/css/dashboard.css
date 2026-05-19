@@ -1,0 +1,62 @@
+   body {
+       background: #f1f5f9;
+   }
+
+   /* Sidebar */
+   .sidebar {
+       width: 250px;
+       background: #2a427a;
+       color: #fff;
+       position: fixed;
+       height: 100%;
+       left: 0;
+       top: 0;
+   }
+
+   .sidebar h2 {
+       padding: 20px;
+       border-bottom: 1px solid #557cb6;
+   }
+
+   .menu a {
+       display: block;
+       padding: 12px 20px;
+       color: #cbd5e1;
+       text-decoration: none;
+   }
+
+   .menu a:hover {
+       background: #1e293b;
+       color: #fff;
+   }
+
+   .main {
+       margin-left: 250px;
+   }
+
+   .navbar-custom {
+       height: 60px;
+       background: #fff;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       padding: 0 20px;
+       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+   }
+
+   table {
+       table-layout: fixed;
+       width: 100%;
+   }
+
+   td:nth-child(2),
+   th:nth-child(2) {
+       width: 120px;
+       /* resim sütunu sabit */
+   }
+
+   td img {
+       width: 100px;
+       height: auto;
+       display: block;
+   }

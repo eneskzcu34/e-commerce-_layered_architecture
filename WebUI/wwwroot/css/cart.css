@@ -1,0 +1,159 @@
+/* TABLE */
+.ec-cart-table {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    overflow: hidden;
+}
+
+/* HEADER */
+.ec-cart-head {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr 1fr 0.5fr;
+    padding: 15px;
+    background: #f8f8f8;
+    font-weight: 600;
+    font-size: 14px;
+    align-items: center;
+}
+
+/* ROW */
+.ec-cart-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr 1fr 0.5fr;
+    align-items: center;
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+.ec-product-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* PRODUCT */
+.ec-product {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ec-product img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* PRICE */
+.ec-price,
+.ec-total {
+    font-weight: 500;
+}
+
+/* 🔥 QTY (DÜZGÜN HAL) */
+.ec-qty {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: fit-content;
+    overflow: hidden;
+}
+
+.ec-qty button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: #f5f5f5;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.ec-qty input {
+    width: 40px;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+
+/* TOPLU SIL */
+.ec-clear-btn {
+    border: none;
+    background: transparent;
+    color: #999;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+    padding: 4px 6px;
+}
+
+.ec-clear-btn:hover {
+    color: #e53935;
+}
+
+/* TEKLI SIL */
+.ec-remove-btn {
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: #aaa;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.ec-remove-btn:hover {
+    background: #f5f5f5;
+    color: #e53935;
+}
+
+.ec-remove-form {
+    display: flex;
+    justify-content: center;
+}
+
+/* SUMMARY */
+.ec-summary-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 20px;
+    position: sticky;
+    top: 100px;
+}
+
+.ec-summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.ec-summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* BUTTON */
+.ec-checkout {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #f87321;
+    color: #fff;
+    font-weight: bold;
+}
+
+.ec-checkout:hover {
+    background: rgb(212, 89, 12);
+}

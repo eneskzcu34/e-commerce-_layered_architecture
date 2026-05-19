@@ -1,0 +1,73 @@
+@using Application.DTOs.ProductDTOs
+@model ProductUpdateDto
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h5 class="mb-3">Ürün Güncelle</h5>
+<form asp-controller="Product" asp-action="Edit" method="post" enctype="multipart/form-data">
+    <div class="row g-3">
+        <div class="col-12">
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Ürün Adı</label>
+            <input type="text" class="form-control" asp-for="Name"/>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Fiyat</label>
+            <input type="number" class="form-control" asp-for="Price"/>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Stok</label>
+            <input type="number" class="form-control" asp-for="Stock"/>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Kategori</label>
+            <select class="form-select" asp-for="CategoryId" asp-items="Model.Categories">
+                <option value="0">Seçiniz</option>
+            </select>
+        </div>
+
+        <div class="col-12">
+            <textarea class="form-control" asp-for="Description" rows="8"></textarea>
+        </div>
+        @for (int i = 0; i < Model.Images.Count; i++)
+        {
+            <div class="col-3">
+                <label class="image-upload-box">
+                    <i class="bi bi-cloud-upload fs-3"></i>
+                    <div>Resim seç</div>
+                    <img src="@Model.Images[i].ImageUrl" style="width:100%;height:300px;object-fit:cover;"/>
+                    <input type="file" asp-for="Images[i].NewImage" class="d-none"/>
+                </label>
+
+                <div class="form-check mt-2">
+                    <input type="radio" name="SelectedMainImageId" value="@Model.Images[i].Id" @(Model.Images[i].IsMain
+                                                                                                   ? "checked"
+                                                                                                   : "")/>
+                    <label>Ana Sayfa</label>
+                </div>
+                <input type="hidden" asp-for="Images[i].Id"/>
+                <input type="hidden" asp-for="Images[i].ImageUrl"/>
+            </div>
+        }
+        <div class="col-md-6 d-flex align-items-end">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" asp-for="IsActive"/>
+                <label class="form-check-label ms-2">Aktif</label>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="row g-3 preview-container" id="previewContainer"></div>
+        </div>
+
+        <div class="col-12 d-flex justify-content-end gap-2 mt-3">
+            <a asp-controller="Product" asp-action="Index" class="btn btn-outline-secondary">İptal</a>
+
+            <button type="submit" class="btn btn-primary">Güncelle</button>
+        </div>
+    </div>
+</form>

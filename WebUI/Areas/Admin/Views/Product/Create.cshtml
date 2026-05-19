@@ -1,0 +1,57 @@
+@using Application.DTOs.ProductsDTOs
+@model ProductCreateDto
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="form-title d-flex justify-content-between align-items-center">
+    <h5 class="mb-0">Ürün Ekle</h5>
+</div>
+
+<form asp-controller="Product" asp-action="Create" method="post" enctype="multipart/form-data" class="mt-4">
+    <div class="row g-3">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="col-md-6">
+            <label class="form-label">Ürün Adı</label>
+            <input type="text" class="form-control" placeholder="Ürün adı girin" asp-for="Name">
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Fiyat</label>
+            <input type="number" class="form-control" placeholder="₺" asp-for="Price">
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Stok</label>
+            <input type="number" class="form-control" placeholder="Adet" asp-for="Stock">
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Kategori</label>
+            <select class="form-select" asp-for="CategoryId" asp-items="Model.Categories">
+                <option value="">Seçiniz</option>
+
+            </select>
+        </div> 
+        <div class="col-10">
+            <label class="form-label">Açıklama</label>
+            <textarea class="form-control" rows="4" placeholder="Ürün açıklaması..." asp-for="Description"></textarea>
+        </div>
+      <div class="col-2 p-4" style="text-align: center;">
+            <label class="image-upload-box">
+                <i class="bi bi-cloud-upload fs-3"></i>
+                <div>Resim seç</div>
+                <input type="file" class="d-none" asp-for="Images" multiple />
+            </label>
+        </div>
+        <div class="col-12 d-flex justify-content-end gap-2 mt-3">
+            <a class="btn btn-outline-secondary" asp-action="Index" asp-controller="Product">
+                <i class="bi bi-x"></i> İptal
+            </a>
+            <button class="btn btn-primary">
+                <i class="bi bi-check2"></i> Kaydet
+            </button>
+        </div>
+
+    </div>
+</form>

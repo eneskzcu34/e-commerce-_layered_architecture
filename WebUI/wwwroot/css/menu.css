@@ -1,0 +1,167 @@
+/* ===== NAVBAR GENEL ===== */
+.ec-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: Arial, sans-serif;
+  margin-bottom: 5rem !important;
+}
+
+/* ===== ÜST BAR ===== */
+.ec-navbar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+/* LOGO */
+.ec-navbar-logo a {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+/* ===== SEARCH ===== */
+.ec-navbar-search-area {
+  flex: 1;
+  margin: 0 40px;
+}
+
+.ec-navbar-search {
+  width: 100%;
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 25px;
+  border: 1px solid #ff6000;
+  background-color: #f5f5f5;
+  outline: none;
+  font-size: 14px;
+}
+
+.ec-navbar-search:focus {
+  border-color: #ff6000;
+  background: #fff;
+}
+
+/* ===== SAĞ ===== */
+.ec-navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ec-nav-item {
+  text-decoration: none;
+  font-size: 14px;
+  color: #333;
+}
+
+.ec-nav-item:hover {
+  color: #ff6000;
+}
+
+/* ===== USER DROPDOWN ===== */
+.ec-user-menu {
+  position: relative;
+}
+
+.ec-user-dropdown {
+  position: absolute;
+  top: 20px;
+  left: -55px;
+  width: 180px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 40px;
+  padding: 15px;
+  display: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  height: 150px;
+  align-content: center;
+}
+
+.ec-user-menu:hover .ec-user-dropdown {
+  display: block;
+}
+
+/* BUTTONS */
+.ec-btn-login {
+  display: block;
+  width: 100%;
+  background: #f87321;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  border-radius: 25px;
+  border: 1px solid #f87321;
+}
+
+.ec-btn-register {
+  display: block;
+  border: 1px solid #f87321;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 30px;
+}
+
+.ec-account:hover {
+  background: rgb(212, 89, 12);
+  color: #fff;
+}
+
+/* ===== SEPET ===== */
+.ec-cart {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+}
+
+.ec-cart:hover {
+  border-color: #ff6000;
+  color: #ff6000;
+}
+
+/* ===== ALT BAR ===== */
+.ec-navbar-bottom {
+  border-top: 1px solid #f0f0f0;
+  background: #fff;
+}
+
+.ec-categories {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.ec-cat-all {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.ec-categories li a {
+  text-decoration: none;
+  color: #444;
+}
+
+.ec-categories li a:hover {
+  color: #ff6000;
+}

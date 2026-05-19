@@ -1,0 +1,105 @@
+@using Application.DTOs.ProductDTOs
+@model ProductPageViewModel
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="ec-filter">
+                <h6>Filtrele</h6>
+                <form asp-controller="Product" asp-action="Filter" method="get">
+                <div class="ec-filter-box">
+                    <strong>Kategoriler</strong>
+                    @foreach(var item in Model.Categories)
+                    {
+                        <label><input type="checkbox" name="categories"
+                        value="@item.Name" @(Context.Request.Query["categories"].Contains(item.Name)
+                        ? "checked"
+                        : "") /> @item.Name</label>
+
+                    }
+                </div>
+                
+                <div class="ec-filter-box">
+                    <strong>Fiyat</strong>
+                    <label><input type="checkbox" name="price" value="0-500"  @(Context.Request.Query["price"] == "0-500"
+                        ? "checked"
+                        : "")> 0 - 500 TL</label>
+                    <label><input type="checkbox" name="price" value="500-1000" @(Context.Request.Query["price"] == "500-1000"
+                        ? "checked"
+                        : "")> 500 - 1000 TL</label>
+                    <label><input type="checkbox" name="price" value="1000+" @(Context.Request.Query["price"] == "1000+"
+                        ? "checked"
+                        : "")> 1000+ TL</label>
+                </div> 
+                 <button type="submit" class="btn btn-primary w-100">Filtrele</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="ec-sort-bar">
+                <span class="ec-result-count">120 ürün bulundu</span>
+                <div class="ec-sort-wrapper">
+                    <i class="fa-solid fa-arrow-down-wide-short"></i>
+                    <select class="ec-sort-select" name="sort" id="sortSelect">
+    <option value="">Varsayılan Sıralama</option>
+    <option value="name-asc">A → Z</option>
+    <option value="name-desc">Z → A</option>
+    <option value="price-asc">Fiyat Artan</option>
+    <option value="price-desc">Fiyat Azalan</option>
+</select>
+                </div>
+            </div>
+            <div class="row g-3 mt-2">
+                @foreach (var product in Model.Products){
+                <div class="col-md-4">
+                    <a asp-controller="Product" asp-action="Detail" asp-route-name="@product.Name" class="ec-product-link">
+                        <div class="ec-product-card">
+                            <div class="ec-badge">EN ÇOK SATAN</div>
+                            <div class="ec-fav">♡</div>
+                            <img src="@product.MainImageUrl" alt="@product.Name" class="ec-product-img">
+                            <div class="ec-bottom-highlight">
+                                En Çok Satan 1. Ürün
+                            </div>
+                            <div class="ec-product-body">
+                                <p class="ec-product-title">
+                                    @product.Name
+                                </p>
+                                <p class="ec-product-title">
+                                    @product.Description
+                                </p>
+                                <div class="ec-rating">
+                                    ⭐⭐⭐⭐☆ <span>(4.3) • 12.345</span>
+                                </div>
+                                <div class="ec-price">
+                                    <span class="ec-old-price">399 TL</span>
+                                    <span class="ec-new-price">@product.Price.ToString("F2") TL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div> 
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+   const urlParams = new URLSearchParams(window.location.search);
+
+    const currentSort = urlParams.get('sort');
+
+    if (currentSort) {
+        document.getElementById('sortSelect').value = currentSort;
+    }
+
+    document.querySelector('#sortSelect')
+    .addEventListener('change', function () {
+
+        const selectedValue = this.value;
+
+        urlParams.set('sort', selectedValue);
+
+        window.location.href =
+            '/Product/Filter?' + urlParams.toString();
+    });
+</script>

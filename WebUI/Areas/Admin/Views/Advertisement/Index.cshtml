@@ -1,0 +1,19 @@
+@using Application.DTOs.AdvertisementDTOs
+@model AdvertisementCreateDto
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-controller="Advertisement" asp-action="Index" method="post">
+
+    <input asp-for="Title" placeholder="Başlık" />
+
+    <input asp-for="Description" placeholder="Açıklama" />
+
+    <input asp-for="ProductCode" placeholder="Ürün Kodu" />
+
+    <button type="submit">
+        Kaydet
+    </button>
+
+</form>

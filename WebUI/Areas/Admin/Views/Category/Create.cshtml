@@ -1,0 +1,32 @@
+@using Application.DTOs.ProductsDTOs.CategoryDTOs
+@model CategoryCreateDto
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="form-title mb-3">
+    <h5>Kategori Ekle</h5>
+</div>
+
+<form asp-area="Admin" asp-controller="Category" asp-action="Create" method="post">
+    <div class="row g-3">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="col-md-6">
+            <label class="form-label">Kategori Adı</label>
+            <input type="text" class="form-control" placeholder="Kategori adı girin" asp-for="Name">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Kategori Açıklaması</label>
+            <input type="text" class="form-control" placeholder="Kategori açıklaması girin" asp-for="Description">
+        </div>
+        <div class="col-12 d-flex justify-content-end gap-2 mt-3">
+            <a type="button" class="btn btn-outline-secondary" asp-action="Index">
+                <i class="bi bi-x"></i> İptal
+            </a>
+            <button class="btn btn-primary">
+                <i class="bi bi-check2"></i> Kaydet
+            </button>
+        </div>
+
+    </div>
+</form>

@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container mt-4">
+    @await Component.InvokeAsync("Coursel")
+</div>
+
+
+<div class="container mt-4">
+    @await Component.InvokeAsync(name: "PopulerCards")
+</div>

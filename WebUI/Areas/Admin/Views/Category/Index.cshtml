@@ -1,0 +1,47 @@
+@using Application.DTOs.CategoryDTOs
+@model List<CategoryViewDto>
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="d-flex justify-content-between mb-3">
+    <h5>Kategoriler</h5>
+    <a asp-controller="Category" asp-action="Create" class="btn btn-primary">
+        <i class="bi bi-plus"></i> Yeni Kategori
+    </a>
+</div>
+<table class="table table-hover align-middle">
+    <thead class="table-light">
+        <tr>
+            <th>#</th>
+            <th>Kategori Adı</th>
+            <th>Açıklama</th>
+            <th>Ürün Sayısı</th>
+            <th>Oluşturma Tarihi</th>
+            <th>Güncelleme Tarihi</th>
+            <th>İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@category.Id</td>
+                <td>@category.Name</td>
+                <td>@category.Description</td>
+                <td><span class="badge bg-secondary">@category.ProductCount</span></td>
+                <td>@category.CreateDate.ToString("dd.MM.yyyy HH:mm")</td>
+                <td>@category.UpdateDate.ToString("dd.MM.yyyy HH:mm")</td>
+                <td>
+                    <form asp-action="Delete" asp-route-id="@category.Id" method="post">
+                        <a asp-action="Edit" asp-route-id="@category.Id" class="btn btn-sm btn-warning">
+                            <i class="bi bi-pencil"></i>
+                        </a>
+                        <button class="btn btn-sm btn-danger" type="submit">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

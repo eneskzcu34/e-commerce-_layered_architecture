@@ -1,0 +1,90 @@
+/* SAYFA ORTALAMA */
+.ec-login-page {
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* KART */
+.ec-login-card {
+  width: 100%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* SOL TARAF */
+.ec-login-left {
+  background: linear-gradient(135deg, #ff6000, #ff8c42);
+  color: #fff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ec-login-left h2 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* FORM */
+.ec-login-form {
+  padding: 40px;
+}
+
+.ec-login-title {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #ff6000;
+}
+
+/* INPUT */
+.ec-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ff6000;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.ec-input:focus {
+  border-color: #ff6000;
+  outline: none;
+}
+
+/* BUTTON */
+.ec-login-btn {
+  width: 100%;
+  background: #ff6000;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+}
+
+/* ALT */
+.ec-login-links {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.ec-login-links a {
+  color: #666;
+  text-decoration: none;
+}
+
+.ec-register {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.ec-register a {
+  color: #ff6000;
+  text-decoration: none;
+}

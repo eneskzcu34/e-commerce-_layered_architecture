@@ -1,0 +1,31 @@
+@using E_Shopping.Application.DTOs.AccountDTOs
+@model LoginDTo
+
+<form asp-controller="Account" asp-action="Login" method="post">
+    <div class="ec-login-page">
+        <div class="ec-login-card row g-0">
+            <div class="col-md-6 ec-login-left">
+                <h2>Hoş Geldin 👋</h2>
+                <p>Alışverişe devam etmek için giriş yap</p>
+            </div>
+            <div class="col-md-6">
+                <div class="ec-login-form">
+                    <h3 class="ec-login-title">Giriş Yap</h3>
+                    <div asp-validation-summary="All" class="text-danger mb-2"></div>
+                    <input type="email" asp-for="Email" placeholder="E-posta" class="ec-input">
+                    <input type="password" asp-for="Password" placeholder="Şifre" class="ec-input">
+                    <button type="submit" class="ec-login-btn">Giriş Yap</button>
+                    <div class="ec-login-links">
+                        <label>
+                            <input type="checkbox" asp-for="RememberMe"> Beni hatırla
+                        </label>
+                        <a href="#">Şifremi unuttum</a>
+                    </div>
+                    <div class="ec-register">
+                        Hesabın yok mu? <a href="/Account/Register">Kayıt Ol</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

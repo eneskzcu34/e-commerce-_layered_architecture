@@ -1,0 +1,55 @@
+@using Application.DTOs.ProductDTOs
+@model List<ProductViewDto>
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex justify-content-between mb-3">
+    <h4>Ürünler</h4>
+    <a asp-controller="Product" asp-action="Create" class="btn btn-primary">
+        <i class="bi bi-plus"></i> Yeni Ürün
+    </a>
+</div>
+
+<table class="table table-bordered table-hover">
+    <thead class="table-light">
+        <tr>
+            <th>#Kodu</th>
+            <th>Resim</th>
+            <th>Ürün Adı</th>
+            <th>Fiyat</th>
+            <th>Stok</th>
+            <th>Kategori</th>
+            <th>Durum</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.ProductCode</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(product.MainImageUrl))
+                    {
+                        <img src="@product.MainImageUrl" alt="@product.Name" />
+                    }
+                </td>
+                <td>@product.Name</td>
+                <td>₺@product.Price.ToString("N2")</td>
+                <td>@product.Stock</td>
+                <td>@product.CategoryName</td>
+            <td><span class="badge @(product.IsActive ? "bg-success" : "bg-secondary")">@(product.IsActive ? "Aktif" : "Pasif")</span></td>
+            <td>
+            
+                <a asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id" class="btn btn-sm btn-warning" >
+                    <i class="bi bi-pencil"></i>
+                </a>
+                <button class="btn btn-sm btn-danger">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

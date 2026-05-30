@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260519091615_InitialCreate")]
+    [Migration("20260529113320_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -234,6 +234,7 @@ namespace Infrastructure.Migrations
             modelBuilder.Entity("Infrastructure.Identity.AppRole", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ConcurrencyStamp")

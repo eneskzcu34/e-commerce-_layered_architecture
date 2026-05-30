@@ -35,16 +35,19 @@ namespace WebUI.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> Login(LoginDTo model)
         {
+
+
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null)
             {
                 ModelState.AddModelError("Email", "Bu email ile kayıtlı bir kullanıcı bulunamadı.");
                 return View(model);
             }
-            var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, false);
+            var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, true);
             if (result.Succeeded)
             {
                 await _userManager.ResetAccessFailedCountAsync(user);
+                await _userManager.SetLockoutEndDateAsync(user, null);
                 return RedirectToAction("Index", "Home");
             }
             else if (result.IsLockedOut)

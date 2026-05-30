@@ -4,20 +4,13 @@ using Infrastructure.Persistence.Context;
 using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllersWithViews();
 builder.Services.AddSqlServer<AppDbContext>(builder.Configuration.GetConnectionString("MyDbConnections"));
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
-builder.Services.Configure<IdentityOptions>(options =>
-{
-    options.Lockout.MaxFailedAccessAttempts = 3;
-    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(3);
-    options.Lockout.AllowedForNewUsers = true;
-});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -2,8 +2,10 @@ using Application.DTOs.ProductDTOs;
 using Application.DTOs.ProductsDTOs;
 using Application.Interfaces;
 using E_Shopping.Domain.Entities;
+using E_Shopping.Domain.Interfaces.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.CodeAnalysis.Elfie.Serialization;
 
 namespace MyApp.Namespace
 {
@@ -12,10 +14,12 @@ namespace MyApp.Namespace
     public class ProductController : Controller
     {
         private readonly IProductService _productService;
+        private readonly IRepository<Product> _repository;
 
-        public ProductController(IProductService productService)
+        public ProductController(IProductService productService, IRepository<Product> repository)
         {
             _productService = productService;
+            _repository = repository;
         }
 
         // GET: /Admin/Product/Index
@@ -73,6 +77,14 @@ namespace MyApp.Namespace
             }
 
             await _productService.UpdateProductAsync(id, model);
+            return RedirectToAction("Index");
+        }
+        [HttpPost("{id}")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Remove(int id)
+        {
+            var product = await _repository.GetByIdAsync(id);
+            _repository.Delete(product);
             return RedirectToAction("Index");
         }
 

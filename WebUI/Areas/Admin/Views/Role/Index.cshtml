@@ -1,0 +1,42 @@
+@using Application.DTOs.RoleDTOs
+@model List<RoleViewDto>
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="d-flex justify-content-between mb-3">
+    <h4>Roller</h4>
+    <a asp-controller="Role" asp-action="Create" class="btn btn-primary">
+        <i class="bi bi-plus"></i> Yeni Rol
+    </a>
+</div>
+
+<table class="table table-bordered table-hover">
+    <thead class="table-light">
+        <tr>
+            <th>Id</th>
+            <th>Rol Adı</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <form asp-controller="Role" asp-action="Delete" method="post" asp-route-id="@item.Id">
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                  
+                    <td>
+                        <a asp-controller="Role" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">
+                            <i class="bi bi-pencil"></i>
+                        </a>
+                        <button class="btn btn-sm btn-danger">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </form>
+        }
+    </tbody>
+</table>

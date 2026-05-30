@@ -9,5 +9,9 @@ namespace Application.Interfaces
     public interface IAdvertisementService
     {
         Task CreateAdvertisement(AdvertisementCreateDto model);
+        Task<List<AdvertisementsViewDto>> GetAllAdvertisements();
+        Task<AdvertisementsViewDto> GetAdvertisementById(int id);
+        Task UpdateAdvertisement(int id, AdvertisementUpdateDto model);
+        Task DeleteAdvertisement(int id);
     }
 }

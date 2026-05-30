@@ -63,3 +63,4 @@ C:\Users\PC\Desktop\E-Commerce-Site\Infrastructure\obj\Debug\net10.0\refint\Infr
 C:\Users\PC\Desktop\E-Commerce-Site\Infrastructure\obj\Debug\net10.0\Infrastructure.pdb
 C:\Users\PC\Desktop\E-Commerce-Site\Infrastructure\obj\Debug\net10.0\Infrastructure.genruntimeconfig.cache
 C:\Users\PC\Desktop\E-Commerce-Site\Infrastructure\obj\Debug\net10.0\ref\Infrastructure.dll
+C:\Users\PC\Desktop\E-Commerce-Site\Infrastructure\obj\Debug\net10.0\Infrastructure.sourcelink.json

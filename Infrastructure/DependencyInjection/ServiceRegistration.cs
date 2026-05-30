@@ -15,6 +15,22 @@ namespace E_Shopping.Infrastructure.DependencyInjection
             services.AddDbContext<AppDbContext>();
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings.
+                options.Lockout.AllowedForNewUsers = true;
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 6;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = true;
+                // Lockout settings.
+                options.Lockout.MaxFailedAccessAttempts = 3;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(3);
+                options.Lockout.AllowedForNewUsers = true;
+                // User settings.
+                options.User.RequireUniqueEmail = true;
+            });
         }
     }
 }

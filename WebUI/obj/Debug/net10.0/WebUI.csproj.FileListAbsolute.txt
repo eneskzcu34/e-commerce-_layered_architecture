@@ -315,7 +315,6 @@ C:\Users\PC\Desktop\E-Commerce-Site\WebUI\obj\Debug\net10.0\rjsmcshtml.dswa.cach
 C:\Users\PC\Desktop\E-Commerce-Site\WebUI\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\PC\Desktop\E-Commerce-Site\WebUI\obj\Debug\net10.0\scopedcss\bundle\WebUI.styles.css
 C:\Users\PC\Desktop\E-Commerce-Site\WebUI\obj\Debug\net10.0\scopedcss\projectbundle\WebUI.bundle.scp.css
-C:\Users\PC\Desktop\E-Commerce-Site\WebUI\obj\Debug\net10.0\compressed\syg74dbdqt-{0}-c0ozvlhcy4-c0ozvlhcy4.gz
 C:\Users\PC\Desktop\E-Commerce-Site\WebUI\obj\Debug\net10.0\compressed\ouokdt36rm-{0}-p9n8trjn5i-p9n8trjn5i.gz
 C:\Users\PC\Desktop\E-Commerce-Site\WebUI\obj\Debug\net10.0\compressed\ip001w24qf-{0}-0a8j3z7iwk-0a8j3z7iwk.gz
 C:\Users\PC\Desktop\E-Commerce-Site\WebUI\obj\Debug\net10.0\compressed\nvq87p6yyv-{0}-o6qgzudh6w-o6qgzudh6w.gz
@@ -399,5 +398,7 @@ C:\Users\PC\Desktop\E-Commerce-Site\WebUI\obj\Debug\net10.0\compressed\ewkh4rntt
 C:\Users\PC\Desktop\E-Commerce-Site\WebUI\obj\Debug\net10.0\compressed\s468setszo-{0}-p1y8t69vc9-p1y8t69vc9.gz
 C:\Users\PC\Desktop\E-Commerce-Site\WebUI\obj\Debug\net10.0\compressed\mqm2j9k9p6-{0}-hbafm5f398-hbafm5f398.gz
 C:\Users\PC\Desktop\E-Commerce-Site\WebUI\obj\Debug\net10.0\compressed\9hlcswbqqh-{0}-aqqw5ioyyu-aqqw5ioyyu.gz
-C:\Users\PC\Desktop\E-Commerce-Site\WebUI\obj\Debug\net10.0\compressed\vrn51gj8tj-{0}-je5p2dfe9a-je5p2dfe9a.gz
 C:\Users\PC\Desktop\E-Commerce-Site\WebUI\obj\Debug\net10.0\compressed\o9sd51yzom-{0}-segeo376np-segeo376np.gz
+C:\Users\PC\Desktop\E-Commerce-Site\WebUI\obj\Debug\net10.0\WebUI.sourcelink.json
+C:\Users\PC\Desktop\E-Commerce-Site\WebUI\obj\Debug\net10.0\compressed\vrn51gj8tj-{0}-9jmpf73681-9jmpf73681.gz
+C:\Users\PC\Desktop\E-Commerce-Site\WebUI\obj\Debug\net10.0\compressed\syg74dbdqt-{0}-oy1wnpmsey-oy1wnpmsey.gz

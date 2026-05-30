@@ -48,17 +48,28 @@ namespace WebUI.Controllers
             return View(model);
         }
 
-        // GET: /Product/Detail/5
-        [HttpGet("Detail/{name}")]
-        public async Task<IActionResult> Detail(string name)
+        // GET: /Product/Detail/Telefon
+        [HttpGet("Detail/{name?}")]
+        public async Task<IActionResult> Detail(string? name)
         {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                return RedirectToAction("PageWasNotFound", "Errors");
+            }
+
             var product = await _productService.DetailProductAsync(name);
+
+            if (product == null)
+            {
+                return RedirectToAction("PageWasNotFound", "Errors");
+            }
             return View(product);
         }
 
         [HttpGet("/Product/Search")]
         public async Task<IActionResult> Search(string searchTerm)
         {
+
             var products = await _productService.GetProductsBySearchAsync(searchTerm);
 
             var model = new ProductPageViewModel

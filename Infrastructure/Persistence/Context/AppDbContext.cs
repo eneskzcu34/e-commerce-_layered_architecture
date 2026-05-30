@@ -22,6 +22,9 @@ namespace Infrastructure.Persistence.Context
             modelBuilder.Entity<AppUser>()
                 .Property(e => e.Id)
                 .ValueGeneratedOnAdd();
+            modelBuilder.Entity<AppRole>()
+            .Property(e => e.Id)
+            .ValueGeneratedOnAdd();
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }

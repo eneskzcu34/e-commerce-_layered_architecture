@@ -1,0 +1,35 @@
+@using Application.DTOs.AdvertisementDTOs
+
+@model AdvertisementUpdateDto
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h5 class="mb-3">Reklam Güncelle</h5>
+<form asp-controller="Advertisement" asp-action="Edit" method="post" class="mt-4">
+    <div class="row g-3">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="col-md-6">
+            <label class="form-label">Başlık Adı</label>
+            <input type="text" class="form-control" placeholder="Başlık girin" asp-for="Title" />
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Ürün Açıklaması</label>
+            <input type="text" class="form-control" placeholder="Ürün açıklaması girin" asp-for="Description" />
+        </div>
+                @* <div class="col-md-6">
+                    <label class="form-label">Ürün Kodu</label>
+                    <input type="text" class="form-control" placeholder="Ürün kodu girin" asp-for="ProductCode" />
+                </div> *@
+
+        <div class="col-12 d-flex justify-content-end gap-2 mt-3">
+            <a class="btn btn-outline-secondary" asp-action="Index" asp-controller="Advertisement">
+                <i class="bi bi-x"></i> İptal
+            </a>
+            <button class="btn btn-primary">
+                <i class="bi bi-check2"></i> Kaydet
+            </button>
+        </div>
+
+    </div>
+</form>

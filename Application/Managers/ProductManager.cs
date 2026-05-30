@@ -172,6 +172,10 @@ namespace Application.Managers
         public async Task<ProductViewDto> DetailProductAsync(string name)
         {
             var product = await _productRepository.GetSingleWithIncludeAsync(p => p.Name == name, p => p.Category, p => p.Images);
+            if (product == null)
+            {
+                return null;
+            }
             return new ProductViewDto
             {
                 Id = product.Id,

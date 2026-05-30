@@ -231,6 +231,7 @@ namespace Infrastructure.Migrations
             modelBuilder.Entity("Infrastructure.Identity.AppRole", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ConcurrencyStamp")

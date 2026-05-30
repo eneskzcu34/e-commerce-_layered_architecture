@@ -20,16 +20,66 @@ namespace WebUI.Areas.Admin.Controllers
         {
             _advertisementService = advertisementService;
         }
-        [HttpGet]
-        public IActionResult Index()
+        [HttpGet("Index")]
+        public async Task<IActionResult> Index()
+        {
+            var advertisements = await _advertisementService.GetAllAdvertisements();
+            return View(advertisements);
+        }
+        [HttpGet("Create")]
+        public IActionResult Create()
         {
             return View();
         }
-        [HttpPost]
-        public async Task<IActionResult> Index(AdvertisementCreateDto model)
+        [HttpPost("Create")]
+        public async Task<IActionResult> Create(AdvertisementCreateDto model)
         {
             await _advertisementService.CreateAdvertisement(model);
             return RedirectToAction("Index");
+        }
+        [HttpPost("Delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _advertisementService.DeleteAdvertisement(id);
+            return RedirectToAction("Index");
+        }
+        [HttpGet("Edit/{id}")]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var advertisement = await _advertisementService.GetAdvertisementById(id);
+            if (advertisement == null)
+            {
+                return NotFound();
+            }
+            var model = new AdvertisementUpdateDto
+            {
+                Id = advertisement.Id,
+                Title = advertisement.Title,
+                Description = advertisement.Description,
+            };
+            return View(model);
+        }
+        [HttpPost("Edit/{id}")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, AdvertisementUpdateDto model)
+        {
+            if (id != model.Id)
+            {
+                return BadRequest();
+            }
+            await _advertisementService.UpdateAdvertisement(id, model);
+            return RedirectToAction("Index");
+        }
+        [HttpPost("Remove/{id}")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Remove(int id)
+        {
+            var advertisement = _advertisementService.GetAdvertisementById(id);
+            if (advertisement == null)
+            {
+                return NotFound();
+            }
+            return View(advertisement);
         }
     }
 }

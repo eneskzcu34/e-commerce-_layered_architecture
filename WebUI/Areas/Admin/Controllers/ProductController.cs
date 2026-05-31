@@ -3,6 +3,7 @@ using Application.DTOs.ProductsDTOs;
 using Application.Interfaces;
 using E_Shopping.Domain.Entities;
 using E_Shopping.Domain.Interfaces.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.CodeAnalysis.Elfie.Serialization;
@@ -10,6 +11,7 @@ using Microsoft.CodeAnalysis.Elfie.Serialization;
 namespace MyApp.Namespace
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     [Route("Admin/[controller]")]
     public class ProductController : Controller
     {
@@ -23,7 +25,7 @@ namespace MyApp.Namespace
         }
 
         // GET: /Admin/Product/Index
-        [HttpGet("Index")]
+        [HttpGet("[action]")]
         public async Task<IActionResult> Index()
         {
             var products = await _productService.GetAllProducts();

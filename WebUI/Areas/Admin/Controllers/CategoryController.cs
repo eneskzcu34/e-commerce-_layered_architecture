@@ -7,6 +7,7 @@ using Application.DTOs.CategoryDTOs;
 using Application.DTOs.ProductsDTOs.CategoryDTOs;
 using Application.Interfaces;
 using E_Shopping.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.Elfie.Serialization;
 using Microsoft.Extensions.Logging;
@@ -14,6 +15,7 @@ using Microsoft.Extensions.Logging;
 namespace WebUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     [Route("Admin/[controller]")]
     public class CategoryController : Controller
     {
@@ -23,7 +25,7 @@ namespace WebUI.Areas.Admin.Controllers
         {
             _categoryService = categoryService;
         }
-        [HttpGet("Index")]
+        [HttpGet("[action]")]
         public async Task<IActionResult> Index()
         {
             var categories = await _categoryService.GetAllCategoriesAsync();

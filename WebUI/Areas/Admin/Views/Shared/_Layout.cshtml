@@ -19,12 +19,12 @@
         <h2>Admin Panel</h2>
         <div class="menu">
             <a href="#"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
-            <a asp-controller="Category" asp-action="Index"><i class="bi bi-tags me-2"></i> Kategoriler</a>
-            <a asp-controller="Product" asp-action="Index"><i class="bi bi-box-seam me-2"></i> Ürünler</a>
-            <a asp-controller="Advertisement" asp-action="Index"><i class="bi bi-box-seam me-2"></i> Reklam</a>
-            <a href="#"><i class="bi bi-cart me-2"></i> Siparişler</a>
-            <a asp-controller="User" asp-action="Index"><i class="bi bi-people me-2"></i> Kullanıcılar</a>
-            <a asp-controller="Role" asp-action="Index"><i class="bi bi-people me-2"></i> Roller</a>
+            <a asp-area="Admin" asp-controller="Category" asp-action="Index"><i class="bi bi-tags me-2"></i> Kategoriler</a>
+            <a asp-area="Admin" asp-controller="Product" asp-action="Index"><i class="bi bi-box-seam me-2"></i> Ürünler</a>
+            <a asp-area="Admin" asp-controller="Advertisement" asp-action="Index"><i class="bi bi-box-seam me-2"></i> Reklam</a>
+            <a asp-area="Admin" asp-controller="Order" asp-action="Index"><i class="bi bi-cart me-2"></i> Siparişler</a>
+            <a asp-area="Admin" asp-controller="User" asp-action="Index"><i class="bi bi-people me-2"></i> Kullanıcılar</a>
+            <a asp-area="Admin" asp-controller="Role" asp-action="Index"><i class="bi bi-people me-2"></i> Roller</a>
             <a href="#"><i class="bi bi-gear me-2"></i> Ayarlar</a> 
         </div>
     </div>
@@ -34,7 +34,7 @@
             <h5>Dashboard</h5>
             <span>@User.Identity.Name / @User.FindFirstValue(ClaimTypes.Role)</span>
         </div>
-        <!-- Content -->
+        <!-- Content -->        
         <div class="container-fluid mt-4">
             <!-- Cards -->
             <div class="row g-3">

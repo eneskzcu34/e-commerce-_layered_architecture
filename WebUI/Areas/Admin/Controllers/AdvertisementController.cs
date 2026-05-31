@@ -5,12 +5,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Application.DTOs.AdvertisementDTOs;
 using Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace WebUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     [Route("Admin/[controller]")]
     public class AdvertisementController : Controller
     {
@@ -20,7 +22,7 @@ namespace WebUI.Areas.Admin.Controllers
         {
             _advertisementService = advertisementService;
         }
-        [HttpGet("Index")]
+        [HttpGet("[action]")]
         public async Task<IActionResult> Index()
         {
             var advertisements = await _advertisementService.GetAllAdvertisements();

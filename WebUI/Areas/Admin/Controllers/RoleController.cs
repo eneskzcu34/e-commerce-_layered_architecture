@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Application.DTOs.RoleDTOs;
 using Infrastructure.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,7 @@ using Microsoft.Extensions.Logging;
 namespace WebUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     [Route("[controller]")]
     public class RoleController : Controller
     {
@@ -22,7 +24,7 @@ namespace WebUI.Areas.Admin.Controllers
         {
             _roleManager = roleManager;
         }
-        [HttpGet("/Roles")]
+        [HttpGet("[action]")]
         public async Task<IActionResult> Index()
         {
             var result = await _roleManager.Roles

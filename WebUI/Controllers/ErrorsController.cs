@@ -16,6 +16,11 @@ namespace WebUI.Controllers
         {
             return View();
         }
+        [HttpGet("[action]")]
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
 
     }
 }

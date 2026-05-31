@@ -31,6 +31,17 @@ namespace E_Shopping.Infrastructure.DependencyInjection
                 // User settings.
                 options.User.RequireUniqueEmail = true;
             });
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Account/Login";
+                options.AccessDeniedPath = "/Errors/AccessDenied";
+
+                options.Cookie.Name = "EShopping.Auth";
+                options.Cookie.HttpOnly = true;
+
+                options.ExpireTimeSpan = TimeSpan.FromDays(4);
+                options.SlidingExpiration = true;
+            });
         }
     }
 }

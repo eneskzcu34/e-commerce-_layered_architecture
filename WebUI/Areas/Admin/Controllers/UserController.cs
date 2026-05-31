@@ -35,7 +35,7 @@ namespace WebUI.Areas.Admin.Controllers
             _appDbContext = appDbContext;
         }
 
-        [HttpGet("/Users")]
+        [HttpGet("[action]")]
         public async Task<IActionResult> Index()
         {
             var users = await (

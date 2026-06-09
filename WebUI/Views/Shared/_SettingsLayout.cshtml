@@ -1,0 +1,22 @@
+@{
+    Layout = "_Layout";
+}
+<div class="container settings-page">
+    <div class="settings-card">
+        <div class="row g-0">
+            <div class="col-lg-3">
+                <div class="settings-sidebar">
+                    <h4>Hesabım</h4>
+                    <a asp-action="UserProfile">Profil Bilgileri</a>
+                    <a asp-action="ChangePassword">Şifre Değiştir</a>
+                    <a asp-action="Addresses"> Adreslerim</a>
+                    <a asp-action="Orders">Siparişlerim</a>
+                    <a asp-action="DeleteMyAccount">Hesabımı Sil</a>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</div>

@@ -19,12 +19,14 @@
     <link rel="stylesheet" href="~/css/cart.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/coursel.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/populerCards.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/settings.css" asp-append-version="true" />
 </head>
 
 <body>
     <nav class="ec-navbar">
         @await Component.InvokeAsync("Menu")
     </nav>
+    @RenderSection("Bar", required: false)
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

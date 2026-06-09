@@ -77,13 +77,28 @@
   ],
   "logs": [
     {
-      "code": "NU1900",
+      "code": "NU1903",
       "level": "Warning",
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "message": "'System.Security.Cryptography.Xml' 9.0.0 paketinde önem derecesi yüksek olan bilinen bir https://github.com/advisories/GHSA-37gx-xxp4-5rgx güvenlik açığı var",
       "projectPath": "C:\\Users\\PC\\Desktop\\E-Commerce-Site\\Infrastructure\\Infrastructure.csproj",
       "warningLevel": 1,
       "filePath": "C:\\Users\\PC\\Desktop\\E-Commerce-Site\\Infrastructure\\Infrastructure.csproj",
-      "targetGraphs": []
+      "libraryId": "System.Security.Cryptography.Xml",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "'System.Security.Cryptography.Xml' 9.0.0 paketinde önem derecesi yüksek olan bilinen bir https://github.com/advisories/GHSA-w3x6-4m5h-cxqf güvenlik açığı var",
+      "projectPath": "C:\\Users\\PC\\Desktop\\E-Commerce-Site\\Infrastructure\\Infrastructure.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\PC\\Desktop\\E-Commerce-Site\\Infrastructure\\Infrastructure.csproj",
+      "libraryId": "System.Security.Cryptography.Xml",
+      "targetGraphs": [
+        "net10.0"
+      ]
     }
   ]
 }

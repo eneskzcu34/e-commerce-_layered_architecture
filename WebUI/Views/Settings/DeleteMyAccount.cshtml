@@ -1,0 +1,31 @@
+@using Application.DTOs.SettingsDTOs
+@model UserDeleteDto
+@{
+    Layout = "~/Views/Shared/_SettingsLayout.cshtml";
+    ViewData["Title"] = "Hesabı Sil";
+}
+
+<div class="settings-content">
+    <h2 class="settings-title">Hesabı Sil</h2>
+
+    <p class="settings-danger-text">
+        Hesabınızı sildiğinizde profil bilgileriniz, siparişleriniz ve diğer
+        verileriniz kalıcı olarak silinecektir. Bu işlem geri alınamaz.
+    </p>
+
+    <form asp-action="DeleteMyAccount" method="post" class="settings-form">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="mb-3">
+            <label>Onaylamak için şifrenizi girin</label>
+            <input type="password" asp-for="Password" class="settings-input" placeholder="Şifreniz">
+        </div>
+
+        <div class="settings-actions">
+            <button type="submit" class="settings-btn">
+                Hesabımı Sil
+            </button>
+        </div>
+
+    </form>
+
+</div>

@@ -1,3 +1,4 @@
+using Application.Managers;
 using E_Shopping.Application.DependencyInjection;
 using E_Shopping.Infrastructure.DependencyInjection;
 using Infrastructure.Persistence.Context;
@@ -8,6 +9,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllersWithViews();
 builder.Services.AddSqlServer<AppDbContext>(builder.Configuration.GetConnectionString("MyDbConnections"));
+builder.Services.AddMiniProfiler(options =>
+{
+    options.RouteBasePath = "/profiler";
+    options.ShouldProfile = request =>
+   {
+       return !request.Path.Value.Contains("/images")
+           && !request.Path.Value.Contains("/css")
+           && !request.Path.Value.Contains("/js");
+   };
+}).AddEntityFramework();
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Account/Login";
@@ -19,6 +30,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
+
 
 var app = builder.Build();
 
@@ -37,7 +49,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapStaticAssets();
-
+app.UseMiniProfiler();
 app.MapControllerRoute(
     name: "areas",
     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"

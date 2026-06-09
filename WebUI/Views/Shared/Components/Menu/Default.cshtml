@@ -12,13 +12,13 @@
     </div>
     <div class="ec-navbar-right">
         <div class="ec-user-menu">
-            <a class="ec-nav-item">@(User.Identity.IsAuthenticated? User.Identity.Name : "Giriş Yap")</a>
+            <a class="ec-nav-item">@(User.Identity.IsAuthenticated ? User.Identity.Name : "Giriş Yap")</a>
             @if (User.Identity.IsAuthenticated)
             {
                 <form asp-controller="Account" asp-action="Logout" method="post">
                     <div class="ec-user-dropdown">
                         <a asp-controller="Account" asp-action="Login" class="ec-btn-login ec-account">Favoriler</a>
-                        <a asp-controller="Account" asp-action="Login" class="ec-btn-login ec-account">Ayarlar</a>
+                        <a asp-controller="Settings" asp-action="UserProfile" class="ec-btn-login ec-account">Ayarlar</a>
                         <button type="submit" class="ec-btn-login ec-account">Çıkış</button>
                     </div>
                 </form>

@@ -1,0 +1,38 @@
+@using Application.DTOs.SettingsDTOs
+@model UserProfileDto
+@{
+    Layout = "~/Views/Shared/_SettingsLayout.cshtml";
+    ViewData["Title"] = "Profil Bilgileri";
+}
+<div class="settings-content">
+    <h2 class="settings-title">Profil Bilgileri</h2>
+    <form asp-action="UserProfile" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Ad</label>
+                <input type="text" class="settings-input" placeholder="Adınız" asp-for="FirstName">
+            </div>
+            <div class="col-md-6">
+                <label>Soyad</label>
+                <input type="text" class="settings-input" placeholder="Soyadınız" asp-for="LastName">
+            </div>
+            <div class="col-md-6">
+                <label>Kullanıcı Adı</label>
+                <input type="text" class="settings-input" placeholder="Kullanıcı Adı" asp-for="UserName">
+            </div>
+            <div class="col-md-6">
+                <label>E-Posta</label>
+                <input type="email" class="settings-input" placeholder="E-Posta" asp-for="Email">
+            </div>
+            <div class="col-md-6">
+                <label>Telefon</label>
+                <input type="text" class="settings-input" placeholder="Telefon" asp-for="PhoneNumber">
+            </div>
+        </div>
+        <div class="settings-actions">
+            <button type="submit" class="settings-btn">
+                Bilgileri Güncelle
+            </button>
+        </div>
+    </form>
+</div>

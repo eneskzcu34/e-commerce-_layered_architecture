@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Application.DTOs.CategoryDTOs;
 using Application.DTOs.ProductDTOs;
 using Application.DTOs.ProductsDTOs;
@@ -64,9 +65,10 @@ namespace Application.Managers
             await _productRepository.AddAsync(product);
             await _productRepository.SaveChangesAsync();
         }
-
         public async Task<List<ProductViewDto>> GetAllProducts()
         {
+            var sw = Stopwatch.StartNew();
+
             var products = await _productRepository.GetAllWithIncludeAsync(p => p.Category, p => p.Images);
             return products.Select(p => new ProductViewDto
             {
@@ -81,6 +83,7 @@ namespace Application.Managers
                 IsActive = p.IsActive
 
             }).ToList();
+
         }
         public async Task<ProductUpdateDto> GetUpdateProductAsync(int id)
         {

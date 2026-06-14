@@ -1,4 +1,90 @@
+@using Application.DTOs.AdressesDTOs
+@model AdressesAllDto
+
 @{
     Layout = "~/Views/Shared/_SettingsLayout.cshtml";
     ViewData["Title"] = "Adresses";
 }
+
+<div class="settings-content">
+    <h2 class="settings-title">Adres Bilgileri</h2>
+
+    @if (Model.UpdateDto != null)
+    {
+        <form asp-controller="Settings" asp-action="UpdateAddress" method="post">
+            @Html.AntiForgeryToken()
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>İl</label>
+                    <input asp-for="UpdateDto.City" class="settings-input" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>İlçe</label>
+                    <input asp-for="UpdateDto.District" class="settings-input" />
+                </div>
+
+                <div class="col-md-9 mb-3">
+                    <label>Mahalle</label>
+                    <input asp-for="UpdateDto.Neighborhood" class="settings-input" />
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <label>Ünvan</label>
+                    <input asp-for="UpdateDto.Title" class="settings-input" />
+                </div>
+
+                <div class="col-md-12 mb-3">
+                    <label>Tam Adres</label>
+                    <textarea asp-for="UpdateDto.FullAddress" class="settings-input" rows="4"></textarea>
+                </div>
+            </div>
+
+            <div class="settings-actions">
+                <button type="submit" class="settings-btn">
+                    Adresi Güncelle
+                </button>
+            </div>
+        </form>
+    }
+    else
+    {
+        <form asp-controller="Settings" asp-action="CreateAddress" method="post">
+            @Html.AntiForgeryToken()
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>İl</label>
+                    <input asp-for="CreateDto.City" class="settings-input" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>İlçe</label>
+                    <input asp-for="CreateDto.District" class="settings-input" />
+                </div>
+
+                <div class="col-md-9 mb-3">
+                    <label>Mahalle</label>
+                    <input asp-for="CreateDto.Neighborhood" class="settings-input" />
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <label>Ünvan</label>
+                    <input asp-for="CreateDto.Title" class="settings-input" />
+                </div>
+
+                <div class="col-md-12 mb-3">
+                    <label>Tam Adres</label>
+                    <textarea asp-for="CreateDto.FullAddress" class="settings-input" rows="4"></textarea>
+                </div>
+            </div>
+
+            <div class="settings-actions">
+                <button type="submit" class="settings-btn">
+                    Adres Oluştur
+                </button>
+            </div>
+        </form>
+    }
+</div>
